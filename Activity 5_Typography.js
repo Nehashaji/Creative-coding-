@@ -2,7 +2,6 @@ let font;
 let colors = [];
 
 function preload() {
-  // Load your own font
   font = loadFont('ShadowsIntoLight.ttf');
 }
 
