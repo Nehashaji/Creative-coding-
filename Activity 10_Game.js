@@ -99,7 +99,7 @@ function playGame() {
   text("Lives: " + lives, 10, 30);
   displayLives(); // Show lives as icons
   
-  // Check if the ball goes below the paddle
+  // Checking if the ball goes below the paddle
   if (ball.y > height) {
     lives--;
     if (lives === 0) {
@@ -187,7 +187,7 @@ class Paddle {
   
   show() {
     fill(50, 150, 250); // Paddle color
-    rect(this.x, this.y, this.w, this.h, 20); // Draw the paddle with rounded corners
+    rect(this.x, this.y, this.w, this.h, 20); // Drawing the paddle with curved corners
   }
   
   move() {
@@ -210,7 +210,7 @@ class Ball {
   }
   
   show() {
-    fill(255, 100, 100); // Ball color
+    fill(255, 100, 100); // colour of the ball
     ellipse(this.x, this.y, this.size); // Draw the ball
   }
   
@@ -226,10 +226,10 @@ class Ball {
       this.speedY *= -1; // Reverse vertical direction if it hits the top wall
     }
     
-    // Check for paddle collision
+    // Checking for paddle collision
     if (this.y + this.size / 2 > paddle.y && this.x > paddle.x && this.x < paddle.x + paddle.w) {
       this.speedY *= -1; // Reverse vertical direction if it hits the paddle
-      this.y = paddle.y - this.size / 2; // Prevent the ball from getting stuck in the paddle
+      this.y = paddle.y - this.size / 2; // Preventing the ball from getting stuck in the paddle
     }
   }
   
@@ -255,11 +255,11 @@ class Brick {
   
   show() {
     fill(this.color);
-    rect(this.x, this.y, this.w, this.h, 10); // Draw the brick with slightly rounded corners
+    rect(this.x, this.y, this.w, this.h, 10); // Drawing the brick with curved corners
   }
 }
 
-// Class to represent a particle for the explosion effect
+// Class to show a particle for the explosion effect
 class Particle {
   constructor(x, y) {
     this.x = x; // Initial horizontal position
@@ -276,12 +276,12 @@ class Particle {
   }
   
   show() {
-    fill(255, this.alpha); // Set fill color with current opacity
+    fill(255, this.alpha); // Setting fill color with current opacity
     noStroke();
-    ellipse(this.x, this.y, 8); // Draw the particle as a small circle
+    ellipse(this.x, this.y, 8); // Drawing the particle as a small circle
   }
   
   finished() {
-    return this.alpha < 0; // Check if the particle is completely faded out
+    return this.alpha < 0; // the particle is completely faded out
   }
 }
